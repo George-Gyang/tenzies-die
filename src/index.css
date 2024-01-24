@@ -1,0 +1,20 @@
+.img_height {
+  height: 100%;
+}
+
+.badge:hover{
+cursor:pointer !important;
+}
+
+.fs_xsm{
+  font-size: 0.86rem;
+}
+
+/* .badge:active{
+background-color: green !important;
+opacity: 0.9 !important;
+} */
+
+.active{
+  background-color: rgb(25,135,84)!important;
+}

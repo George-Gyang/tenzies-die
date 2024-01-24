@@ -1,0 +1,26 @@
+.tenzies_container {
+  display: grid;
+  grid-template: auto auto / repeat(5, 1fr);
+  gap: 1rem;
+}
+
+.tenzies_card{
+    max-width: 400px;
+    /* min-height: 300px; */
+    display: flex;
+    justify-content: center;
+    padding: 2rem 1rem;
+}
+
+.tenzies {
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
+    rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+}
+
+.is_held{
+    background-color: #59e391;
+}
+
+.inherit_bg{
+  background-color: inherit !important;
+}
