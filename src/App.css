@@ -1,3 +1,7 @@
+.min_vh{
+  min-height: 100vh;
+}
+
 .tenzies_container {
   display: grid;
   grid-template: auto auto / repeat(5, 1fr);

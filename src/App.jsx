@@ -59,12 +59,12 @@ const App = () => {
     setTimer((prev) => [...prev, Date.now()])
   }
   return (
-    <div className="bg-dark pb-4 text-light">
+    <div className="bg-dark min_vh pb-4 text-light">
       <h1 className="h1 text-center">Tenzies</h1>
      
       <div className="card my-4 mx-auto tenzies_card">
       <p className="text-center">
-        <i>Instruction:</i> roll until all dies are the same, then click each die to freeze at desire value
+        <i><b>Instruction:</b></i> roll until all dies are the same, then click each die to freeze at desire value
       </p>
         <div className="tenzies_container">
           {youWin && (<Confetti />)}
