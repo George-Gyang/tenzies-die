@@ -5,6 +5,9 @@ import Confetti from "./components/Confetti";
 const App = () => {
   const [diesValues, setDiesValues] = useState(diesAndValues())
   const [youWin, setYouWin] = useState(false)
+  const [attempt, setAttempt] = useState(0)
+  const [timer, setTimer] = useState([])
+  // let trackedTime = null
 
   useEffect(() => {
     const heldDie = diesValues.every((die) => die.isHeld);
@@ -13,15 +16,9 @@ const App = () => {
     if (heldDie === true & sameValues === true) {
       setYouWin(true)
       console.log("you won")
+      // const trackedTime = (timer[timer.length - 1] - timer[0] )/ 1000
     }
   }, [diesValues])
-
-  const valuesGenerator = () => {
-    return {
-      value: Math.ceil(Math.random() * 6),
-      isHeld: false
-    }
-  }
 
   function diesAndValues() {
     const tenzies = [];
@@ -46,6 +43,8 @@ const App = () => {
       return { value: Math.ceil(Math.random() * 6), isHeld: false }
     }))
     setYouWin(false);
+    setAttempt(0)
+    setTimer([])
   }
 
   const AllDies = diesValues.map((die, index) => <TenziesDie hold={hold} index={index} number={die} key={index} />)
@@ -56,17 +55,28 @@ const App = () => {
         isHeld: false
       }
     }))
+    setAttempt( prev => prev + 1)
+    setTimer((prev) => [...prev, Date.now()])
   }
-
   return (
     <div className="bg-dark pb-4 text-light">
       <h1 className="h1 text-center">Tenzies</h1>
+     
       <div className="card my-4 mx-auto tenzies_card">
+      <p className="text-center">
+        <i>Instruction:</i> roll until all dies are the same, then click each die to freeze at desire value
+      </p>
         <div className="tenzies_container">
           {youWin && (<Confetti />)}
           {AllDies}
         </div>
         <div className="mt-5 w-100">
+          <div>
+            {youWin && (<p> Congratulations You made <b> {attempt}</b> attempt</p>)}
+          </div>
+          <div>
+            {youWin && (<p>Completed in <b>{(timer[timer.length - 1] - timer[0] )/ 1000} </b> seconds</p>)}
+          </div>
           {youWin ? (
             <button
               onClick={reset}

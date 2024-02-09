@@ -15,6 +15,7 @@
 .tenzies {
   box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
     rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+    height: 70px !important;
 }
 
 .is_held{
@@ -23,4 +24,9 @@
 
 .inherit_bg{
   background-color: inherit !important;
+}
+@media (max-width: 768px) {
+  .tenzies_container{
+    grid-template: auto auto / repeat(3, 1fr);
+  }
 }

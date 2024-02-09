@@ -1,0 +1,69 @@
+.pip {
+  display: block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  margin: 4px;
+
+  background-color: #333;
+  /* box-shadow: inset 0 3px #111, inset 0 -3px #555; */
+}
+
+.first-face {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100% !important;
+}
+.second-face {
+  display: flex;
+  justify-content: space-between;
+  height: 100% !important;
+}
+
+.second-face .pip:nth-of-type(2) {
+  align-self: flex-end;
+}
+.third-face {
+  display: flex;
+  justify-content: space-between;
+  height: 100% !important;
+
+}
+
+.third-face .pip:nth-of-type(2) {
+  align-self: center;
+}
+
+.third-face .pip:nth-of-type(3) {
+  align-self: flex-end;
+}
+
+.fourth-face,
+.sixth-face {
+  display: flex;
+  justify-content: space-between;
+  height: 100% !important;
+}
+
+.fourth-face .column,
+.sixth-face .column {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.fifth-face {
+  display: flex;
+  justify-content: space-between;
+  height: 100% !important;
+}
+
+.fifth-face .column {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.fifth-face .column:nth-of-type(2) {
+  justify-content: center;
+}
